@@ -51,6 +51,7 @@ main = do
         let mes    = packer "Attack at dawn"
         let exkey  = ksa key
         let keystm = prga exkey (B.length mes)
+        putStrLn "Test vector 0"
         putStrLn $ show $ (H.encode $ keystm)
         let cipher = (B.pack . B.zipWith xor keystm) mes
-        putStrLn $ show $ (H.encode $ cipher)
+        putStrLn $ show $ (H.encode $ cipher) 
